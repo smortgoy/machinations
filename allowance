@@ -1,0 +1,31 @@
+import random
+
+def amount():
+    return (str(random.randint(5,10)))
+
+def bonus():
+    return (str(random.randint(10,20)))
+    
+def allowance():
+    if answer in ("yes","yea","yup","yep","mhm","duh"):
+        if "homework" in answer:
+            print ("Oh now wait a minute! It seems you went above and beyond this week..\nWe are very proud of you!\nSo you have earned " + amount() + " extra dollars!\nUse it wisely...")
+        else:
+            print ("Well done! We knew you could do it:}\nYou have earned " + amount() + " dollars this week!\nCongratulations!")
+
+    elif "homework" in answer:
+        print ("Oh now wait a minute! It seems you went above and beyond this week..\nWe are very proud of you!\nSo you have earned " + bonus() + " extra dollars!\nUse it wisely...")
+
+    else:
+        print ("I'm sorry, you may only collect your allowance if you complete your chores... \nPlease try again later...")
+    
+
+my_name = input("Oh! Hello there, I'm sorry, this old computer can be so forgetful...\nWon't you remind me your name...?\n:")
+
+my_name = my_name.title()
+
+answer = input("Oh that's right...\nHello there, " + str(my_name) + ", It's good to see you again.\nSo tell me... did you do all your chores this week?\n:")
+
+answer = answer.lower()
+
+allowance()
