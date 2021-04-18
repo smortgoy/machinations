@@ -1,20 +1,50 @@
-import random
+import random,sys
+
+upgrade = "Well at least you know the importance of learning.."
+brain = "knowledge is power".upper()
+good = "Oh now wait a minute! It seems you went above and beyond this week..\nWe are very proud of you!"
 
 def amount():
     return (str(random.randint(5,10)))
-
 def bonus():
-    return (str(random.randint(10,20)))
-    
+    return (str(random.randint(15,25)))
 def allowance():
-    if answer in ("yes","yea","yup","yep","mhm","duh"):
+
+    if "yes" in answer:
+
         if "homework" in answer:
-            print ("Oh now wait a minute! It seems you went above and beyond this week..\nWe are very proud of you!\nSo you have earned " + amount() + " extra dollars!\nUse it wisely...")
+            print (f"{good}\nSo you have earned " + bonus() + " extra dollars!\nUse it wisely...")
+
+        else:
+            print ("Well done! We knew you could do it:}\nYou have earned " + amount() + " dollars this week!\nCongratulations!")
+
+    
+    elif "yep" in answer:
+
+        if "homework" in answer:
+            print (f"{good}\nSo you have earned " + bonus() + " extra dollars!\nUse it wisely...")
+
+        else:
+            print ("Well done! We knew you could do it:}\nYou have earned " + amount() + " dollars this week!\nCongratulations!")
+
+    elif "yup" in answer:
+
+        if "homework" in answer:
+            print (f"{good}\nSo you have earned " + bonus() + " extra dollars!\nUse it wisely...")
+
+        else:
+            print ("Well done! We knew you could do it:}\nYou have earned " + amount() + " dollars this week!\nCongratulations!")
+
+    elif "duh" in answer:
+
+        if "homework" in answer:
+            print (f"{good}\nSo you have earned " + bonus() + " extra dollars!\nUse it wisely...")
+
         else:
             print ("Well done! We knew you could do it:}\nYou have earned " + amount() + " dollars this week!\nCongratulations!")
 
     elif "homework" in answer:
-        print ("Oh now wait a minute! It seems you went above and beyond this week..\nWe are very proud of you!\nSo you have earned " + bonus() + " extra dollars!\nUse it wisely...")
+        print (f"{upgrade}\n{brain}!\nSo you have earned " + bonus() + " extra dollars!\nUse it wisely...")
 
     else:
         print ("I'm sorry, you may only collect your allowance if you complete your chores... \nPlease try again later...")
@@ -22,10 +52,12 @@ def allowance():
 
 my_name = input("Oh! Hello there, I'm sorry, this old computer can be so forgetful...\nWon't you remind me your name...?\n:")
 
-my_name = my_name.title()
+my_name = str(my_name.title())
 
-answer = input("Oh that's right...\nHello there, " + str(my_name) + ", It's good to see you again.\nSo tell me... did you do all your chores this week?\n:")
+answer = input("Oh that's right...\nHello there, " + my_name + ", It's good to see you again.\nSo tell me... did you do all your chores this week?\n:")
 
 answer = answer.lower()
 
 allowance()
+
+sys.exit()
